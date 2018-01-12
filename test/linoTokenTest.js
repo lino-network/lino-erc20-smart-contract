@@ -26,28 +26,28 @@ contract('LinoToken', (accounts) => {
     });
   });
 
-  it('initial supply should be 1e10', () => {
+  it('initial supply should be 1e28', () => {
     return LinoToken.deployed().then(inst => {
       return inst.INITIAL_SUPPLY.call();
     }).then(supply => {
-      assert.equal(supply, 1e10, "Token initial supply is not 1e10");
+      assert.equal(supply, 1e28, "Token initial supply is not 1e28");
     });
   });
 
-  it('total supply should be 1e10', () => {
+  it('total supply should be 1e28', () => {
     return LinoToken.deployed().then(inst => {
       return inst.totalSupply.call();
     }).then(supply => {
-      assert.equal(supply, 1e10, "Token total supply is not 1e10");
+      assert.equal(supply, 1e28, "Token total supply is not 1e28");
     });
   });
 
-  it('account 0 should have 1e10 token', () => {
+  it('account 0 should have 1e28 token', () => {
     return LinoToken.deployed().then(inst => {
       utils.assertEvent(inst, { event: 'Transfer' });
       return inst.balanceOf.call(accounts[0]);
     }).then(balance => {
-      assert.equal(balance.valueOf(), 1e10, "account 0 doesn't have 1e10 token");
+      assert.equal(balance.valueOf(), 1e28, "account 0 doesn't have 1e28 token");
     });
   });
 

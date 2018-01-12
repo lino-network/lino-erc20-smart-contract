@@ -12,10 +12,10 @@ import "zeppelin-solidity/contracts/token/PausableToken.sol";
  */
 contract LinoToken is PausableToken {
 
-  string public constant name = "LinoToken";               // Set the token name for display
-  string public constant symbol = "LNO";                   // Set the token symbol for display
-  uint8 public constant decimals = 18;                     // Set the number of decimals for display
-  uint256 public constant INITIAL_SUPPLY = 10000000000;    // 10 billion LNO specified
+  string public constant name = "LinoToken";                                // Set the token name for display
+  string public constant symbol = "LNO";                                    // Set the token symbol for display
+  uint8 public constant decimals = 18;                                      // Set the number of decimals for display
+  uint256 public constant INITIAL_SUPPLY = 1e10 * 10**uint256(decimals);    // 10 billion LNO specified
 
   /**
   * @dev LinoToken Constructor
