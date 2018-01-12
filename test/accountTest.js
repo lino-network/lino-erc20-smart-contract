@@ -13,7 +13,7 @@ contract('LinoToken', (accounts) => {
     return LinoToken.deployed().then(inst => {
       return inst.owner.call();
     }).then(owner => {
-      assert.equal(owner, accounts[0], 'account 0 is not the ownder');
+      assert.equal(owner, accounts[0], 'account 0 is not the owner');
     });
   });
 
@@ -36,12 +36,17 @@ contract('LinoToken', (accounts) => {
 
     return LinoToken.deployed().then(inst => {
       meta = inst;
+      return inst.owner.call();
+    }).then(owner => {
+      assert.equal(owner, accounts[0], 'account 0 is not the owner');
+      assert.notEqual(owner, accounts[1], 'account 0 is not the owner');
+    }).then(() => {
       return meta.transferOwnership(accounts[2], { from: accounts[1] });
     })
     .then(assert.fail)
     .catch(error => {
-      assert(error.message.indexOf('invalid opcode') >= 0,
-      'non-owner accounts calling transferOwnership() should throw an invalid opcode exception');
+      assert(error.message.indexOf('Exception') >= 0,
+        'non-owner accounts calling transferOwnership() should throw an invalid opcode exception');
     });
   });
 });
