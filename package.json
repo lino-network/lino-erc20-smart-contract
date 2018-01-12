@@ -8,8 +8,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "zeppelin-solidity": "1.5.0",
-    "truffle": "4.0.4"
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.4",
+    "truffle": "4.0.4",
+    "zeppelin-solidity": "1.5.0"
   },
   "scripts": {
     "compile": "./node_modules/.bin/truffle compile",
