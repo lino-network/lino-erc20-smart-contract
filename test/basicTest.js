@@ -24,6 +24,7 @@ contract('LinoToken', (account) => {
       assert.equal(decimals, 18, "Token decimals value is not 18");
     });
   });
+<<<<<<< HEAD
 
   it('initial supply should be 1e10', () => {
     return LinoToken.deployed().then(inst => {
@@ -32,4 +33,6 @@ contract('LinoToken', (account) => {
       assert.equal(supply, 1e10, "Token total supply is not 1e10");
     });
   });
+=======
+>>>>>>> 48bde522f8368e11931c9d70fd3432b6147c8ce7
 });
