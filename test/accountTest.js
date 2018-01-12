@@ -49,7 +49,8 @@ contract('LinoToken', (accounts) => {
     })
     .then(assert.fail)
     .catch(error => {
-      assert(error.message.indexOf('Exception') >= 0,
+      assert(
+        error.message.indexOf('Exception') >= 0,
         'non-owner accounts calling transferOwnership() should throw an invalid opcode exception');
     });
   });
