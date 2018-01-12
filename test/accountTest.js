@@ -1,4 +1,5 @@
 var LinoToken = artifacts.require("LinoToken");
+var utils = require('./utils.js');
 
 contract('LinoToken', (accounts) => {
   it('account 0 should have 1e10 token', () => {
@@ -23,6 +24,8 @@ contract('LinoToken', (accounts) => {
     return LinoToken.deployed().then(inst => {
       meta = inst;
       return meta.transferOwnership(accounts[1], { from: accounts[0] });
+    }).then(() => {
+      utils.assertEvent(meta, { event: 'OwnershipTransferred' })
     }).then(() => {
       return meta.owner.call();
     }).then(owner => {
