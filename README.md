@@ -8,3 +8,8 @@ cd lino-erc20-smart-contract
 npm install
 ```
 ### Test
+Allow permission to test script and run test script
+```
+chmod u+x scripts/test.sh
+npm run test
+```
