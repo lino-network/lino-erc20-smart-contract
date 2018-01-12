@@ -9,6 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "bluebird": "^3.5.1",
+    "ethereumjs-testrpc": "^6.0.3",
     "lodash": "^4.17.4",
     "truffle": "4.0.4",
     "zeppelin-solidity": "1.5.0"
