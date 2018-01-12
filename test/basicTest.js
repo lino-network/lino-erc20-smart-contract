@@ -27,6 +27,14 @@ contract('LinoToken', (account) => {
 
   it('initial supply should be 1e10', () => {
     return LinoToken.deployed().then(inst => {
+      return inst.INITIAL_SUPPLY.call();
+    }).then(supply => {
+      assert.equal(supply, 1e10, "Token initial supply is not 1e10");
+    });
+  });
+
+  it('total supply should be 1e10', () => {
+    return LinoToken.deployed().then(inst => {
       return inst.totalSupply.call();
     }).then(supply => {
       assert.equal(supply, 1e10, "Token total supply is not 1e10");
