@@ -1,7 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "./zeppelin-solidity/contracts/token/StandardToken.sol";
-import "./zeppelin-solidity/contracts/lifecycle/Pausable.sol";
+import "zeppelin-solidity/contracts/token/PausableToken.sol";
 
 /**
  * @title Lino Token
@@ -11,7 +10,7 @@ import "./zeppelin-solidity/contracts/lifecycle/Pausable.sol";
  * this contract.
  *
  */
- contract LinoToken is StandardToken, Pausable {
+ contract LinoToken is PausableToken {
 
    string public constant name = 'LinoToken';               // Set the token name for display
    string public constant symbol = 'LNO';                   // Set the token symbol for display
@@ -22,7 +21,7 @@ import "./zeppelin-solidity/contracts/lifecycle/Pausable.sol";
     * @dev LinoToken Constructor
     * Runs only on initial contract creation.
     */
-    function LinoToken() {
+    function LinoToken() public {
       totalSupply = INITIAL_SUPPLY;                         // Set the total supply
       balances[msg.sender] = INITIAL_SUPPLY;                // Tnitial tokens are assigned to creator
       Transfer(0x0, msg.sender, INITIAL_SUPPLY);            // emit Transfer event
