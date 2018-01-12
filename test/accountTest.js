@@ -4,6 +4,7 @@ var utils = require('./utils.js');
 contract('LinoToken', (accounts) => {
   it('account 0 should have 1e10 token', () => {
     return LinoToken.deployed().then(inst => {
+      utils.assertEvent(inst, { event: 'Transfer' })
       return inst.balanceOf.call(accounts[0]);
     }).then(balance => {
       assert.equal(balance.valueOf(), 1e10, "account 0 doesn't have 1e10 token");
