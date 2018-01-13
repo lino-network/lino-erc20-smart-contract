@@ -6,9 +6,12 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "truffle-hdwallet-provider": "0.0.3"
+  },
   "devDependencies": {
     "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
     "ethereumjs-testrpc": "^6.0.3",
     "lodash": "^4.17.4",
     "truffle": "4.0.4",
