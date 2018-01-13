@@ -819,7 +819,7 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+      "address": "0x4eee4559bd589b1cdfc419f0eed2ff9cbd47f439"
     },
     "1515712034274": {
       "events": {},
@@ -850,8 +850,13 @@
       "events": {},
       "links": {},
       "address": "0xf3a91f660d75b27c0236afa02afe564ee3201b94"
+    },
+    "1515740835527": {
+      "events": {},
+      "links": {},
+      "address": "0x44df0e6c5c9c8cae74b240f9a8506f9f20c12b60"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-12T06:39:26.729Z"
+  "updatedAt": "2018-01-12T23:39:46.098Z"
 }
