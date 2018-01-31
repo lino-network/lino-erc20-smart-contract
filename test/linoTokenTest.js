@@ -10,11 +10,11 @@ contract('LinoToken', (accounts) => {
     });
   });
 
-  it('symbol should be LNO', () => {
+  it('symbol should be LINO', () => {
     return LinoToken.deployed().then(inst => {
       return inst.symbol.call();
     }).then(symbol => {
-      assert.equal(symbol, 'LNO', "Token symbol is not LNO");
+      assert.equal(symbol, 'LINO', "Token symbol is not LINO");
     });
   });
 
@@ -165,7 +165,7 @@ contract('LinoToken', (accounts) => {
    });
  });
 
- it('should allow transfer() of LNO by address owner when unpaused', () => {
+ it('should allow transfer() of LINO by address owner when unpaused', () => {
    var meta;
    var xferAmt = 1e5;
    var account0StartingBalance;
@@ -214,12 +214,12 @@ contract('LinoToken', (accounts) => {
      return meta.balanceOf(accounts[1], { from: accounts[1] });
    }).then(balance => {
      account1StartingBalance = balance.toNumber();
-     // account 1 first needs approval to move LNO from account 0
+     // account 1 first needs approval to move LINO from account 0
      return meta.approve(accounts[1], xferAmt, { from: accounts[0] });
    }).then(() => {
      utils.assertEvent(meta, { event: 'Approval' });
    }).then(balance => {
-     // with prior approval, account 1 can transfer LNO from account 0
+     // with prior approval, account 1 can transfer LINO from account 0
      return meta.transferFrom(accounts[0], accounts[1], xferAmt, { from: accounts[1] });
    }).then(result => {
      return meta.balanceOf(accounts[0], { from: accounts[0] });
